@@ -9,17 +9,42 @@
 </head>
 <body>
     <header>
-        <div class="menu"><img src="images/menu.png" style="width: 30px"></div>
-        <div class="logo"><img src="images/logo_blue.png" style="width: 100px"></div>
-        <div class="login"></div>
+        <div class="menu"><img  class="menu-img" src="images/menu.png"></div>
+        <div class="logo"><img  class="logo-img" src="images/logo_blue.png"></div>
+        <div class="login">
+            <ul class="login-menu">
+                <li>
+                  <a id="login-trigger" href="#">Log in</a>                    
+                </li>
+                <li id="signup">
+                  <a href="">Sign up</a>
+                </li>
+            </ul>
+            <div class="login-content inactive">
+                <form class="login-form">
+                    <fieldset id="inputs">
+                    <input id="username" type="email" name="Email" placeholder="Your email address" required>   
+                    <input id="password" type="password" name="Password" placeholder="Password" required>
+                    </fieldset>
+                    <fieldset id="actions">
+                    <input type="submit" id="submit" value="Log in">
+                    </fieldset>
+                </form>
+            </div> 
+        </div>
     </header>
     <div id="container">
             <div class="introduction"></div>
+                <div class="intro-pictures"></div>
+                <div class="intro-words">
+                        <p>Flank doner filet mignon beef ribs alcatra chicken drumstick tri-tip pastrami kevin shankle tongue prosciutto turducken. Pork belly ground round t-bone cupim. Ribeye cow leberkas venison porchetta fatback tongue sirloin. Biltong strip steak tenderloin chuck tongue pork belly.</p>
+                </div>
             <div class="search"></div>
             <div class="photos"></div>
             <div class="donate"></div>
-    </container>
+    </div>
     <footer></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>
