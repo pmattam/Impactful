@@ -90,6 +90,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 //adding click listener to search button, will open new page
 var searchButton = document.querySelector('#simple-search > div > button')
 searchButton.addEventListener('click', function(e) {
-    window.open('search.html', '_blank');
+    window.open('html/search.html', '_blank');
 })
 
