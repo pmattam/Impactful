@@ -259,11 +259,18 @@ header {
     /* border-top: darkgray; */
     background-color:  #2f3e66;
     /* border-color: darkgray; */
-    padding: 100px 100px 100px 100px;
+    /* padding: 100px 100px 100px 100px; */
+    height: 100px;
+    color: white;
 }
 
+.footer a {
+    color: white;
+}
+
+
 .location {
-    height: 100px;
+    height: 300px;
     width: 100%;
     display: flex;
     justify-content: center;
