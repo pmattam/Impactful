@@ -98,3 +98,4 @@ var searchButton = document.querySelector('#simple-search > div > button')
 searchButton.addEventListener('click', function(e) {
     window.open('search.html', '_blank');
 })
+
