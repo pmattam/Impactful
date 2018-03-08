@@ -209,9 +209,15 @@ header {
     border-color: #f47e58;
 }
 
-/* .donate-button span {
-    pointer-events: none;
-} */
+.donate-link {
+    text-decoration: none;
+    color: #24335a;
+}
+
+.donate-link:hover {
+    text-decoration: none;
+    color: #f47e58;
+}
 
 .footer {
     display: flex;
@@ -229,7 +235,6 @@ header {
 }
 
 #map {
-    appearance: none;
     height: 100%;
     width: 100%;
     text-align: center;
