@@ -31,3 +31,19 @@ var imageDisplay = function(gallery) {
 };
 
 imageDisplay(imgGallery);
+
+document.addEventListener('click', function(e) {
+    var loginButton = document.querySelector('#login-trigger')
+    var loginMenu = document.querySelector('.login-content');
+    var loginForm = document.querySelector('.login-form')
+    console.log(loginForm)
+    console.log(e.target.parentElement)
+    if (e.target === loginButton) {
+        loginMenu.classList.remove('inactive');
+    } else if (e.target.parentElement === loginForm) {
+        loginMenu.classList.remove('inactive');
+    } else {
+        loginMenu.classList.add('inactive');
+    }
+});
+
