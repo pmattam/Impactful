@@ -23,6 +23,8 @@ var imageDisplay = function(gallery) {
 
 imageDisplay(imgGallery);
 
+
+//Opens login menu from navigator bar
 document.addEventListener('click', function(e) {
     var loginButton = document.querySelector('#login-trigger')
     var loginMenu = document.querySelector('.login-content');
@@ -48,8 +50,8 @@ document.addEventListener('click', function(e) {
 var map, infoWindow;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 6
+        center: {lat: 33.753, lng: -84.386},
+        zoom: 10
     });
     infoWindow = new google.maps.InfoWindow;
 
@@ -62,7 +64,7 @@ function initMap() {
         };
 
         infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
+        infoWindow.setContent('You are here.');
         infoWindow.open(map);
         map.setCenter(pos);
         }, function() {
@@ -81,4 +83,10 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                             'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
     };
+
+//adding click listener to search button, will open new page
+var searchButton = document.querySelector('#simple-search > div > button')
+searchButton.addEventListener('click', function(e) {
+    window.open('search.html', '_blank');
+})
 
