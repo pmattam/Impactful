@@ -1,0 +1,48 @@
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+        
+body {
+    margin: 0;
+    padding: 0;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+header {
+    background-color: #2f3e66;
+    color: white;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    flex-wrap:nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img {
+    width: 220px;
+}
+
+.donate-form {
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    background-color:  #2f3e66;
+    padding: 100px 100px 100px 100px;
+}
