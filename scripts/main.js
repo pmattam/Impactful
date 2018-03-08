@@ -7,7 +7,7 @@ var introSetup = function() {
 }
 introSetup();
 
-var photoGallery = document.querySelector('.photos');
+var $photoGallery = $('.photos');
 var imgGallery = [ 
     {
         link: "images/pg1.jpg"
@@ -22,11 +22,11 @@ var imgGallery = [
         link: "images/pg4.jpg"
     }
 ];
+
 var imageDisplay = function(gallery) {
     gallery.forEach(function(image) {
-        var imageTag = document.createElement('img');
-        imageTag.setAttribute('src', image.link);
-        photoGallery.appendChild(imageTag);
+        var $imageTag = $('<img>', {'src': image.link});
+        $photoGallery.append($imageTag);
     });
 };
 
