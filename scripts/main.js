@@ -32,8 +32,6 @@ var imageDisplay = function(gallery) {
 
 imageDisplay(imgGallery);
 
-
-
 document.addEventListener('click', function(e) {
     var loginButton = document.querySelector('#login-trigger')
     var loginMenu = document.querySelector('.login-content');
@@ -48,5 +46,4 @@ document.addEventListener('click', function(e) {
         loginMenu.classList.add('inactive');
     }
 });
-
 

@@ -6,6 +6,23 @@ html, body {
     padding: 0;
 }
 
+.photos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.photos img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    /* padding: 10px 10px 10px 10px; */
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -132,4 +149,3 @@ header {
 .introduction img {
     width: 80%;
 }
-
