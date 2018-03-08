@@ -79,8 +79,8 @@ header {
     top: 155px;
 }
 
-.ion-android-menu {
-    font-size: 50px;
+.menu-icon{
+    height: 35px;
 }
 
 .logo {
