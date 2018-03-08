@@ -191,8 +191,25 @@ header {
 .footer {
     display: flex;
     /* border-top: darkgray; */
-    background-color:  #24335a;
+    /* background-color:  #24335a; */
     /* border-color: darkgray; */
     height: 200px;
     width: 100%;
     padding: 100px 100px 100px 100px;
+}
+
+.search {
+    height: 300px;
+    width: 100%;
+    display: block;
+    margin: 10px;
+}
+#map {
+    appearance: none;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+
+
+  }
