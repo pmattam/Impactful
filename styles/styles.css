@@ -181,6 +181,13 @@ header {
     width: 300px;
 }
 
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
 .search-button {
     padding: 1em 3em;
     border:2px solid #fffbdc;
@@ -249,17 +256,17 @@ header {
     padding: 100px 100px 100px 100px;
 }
 
-.search {
-    height: 300px;
+.location {
+    height: 100px;
     width: 100%;
-    display: block;
-    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 #map {
-    appearance: none;
+    display:flex;
     height: 100%;
     width: 100%;
-    text-align: center;
-    overflow: hidden;
 }
