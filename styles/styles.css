@@ -107,29 +107,29 @@ header {
 }
 
 .introduction {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding-top: 30px;
+    align-items: center; */
+    padding: 20%;
+    background-image: url('https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
 }
 
-.intro-words {
-    display: flex;
-    justify-content: center;
-    padding: 0 10% 0 10%;
-} 
-
-.intro-words p {
+.introduction p {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     text-align: center;
     line-height: 1.5;
+    color: white;
 }
 
 .introduction img {
-    max-width:100vw;
+    max-width: 100vw;
 }
+
 
 .photos {
     display: flex;
@@ -192,7 +192,5 @@ header {
     /* border-top: darkgray; */
     background-color:  #2f3e66;
     /* border-color: darkgray; */
-    height: 200px;
-    width: 100%;
     padding: 100px 100px 100px 100px;
 }
