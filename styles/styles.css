@@ -51,6 +51,34 @@ header {
     align-items: center;
 }
 
+.dropdown-content {
+    display: none;
+    background-color: whitesmoke;
+    text-align: center;
+    min-width: 133px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 25px 0 25px 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd
+}
+
+.dropdown-content.active {
+    display: block;
+    position: relative;
+    left: -67px;
+    top: 155px;
+}
+
 .ion-android-menu {
     font-size: 50px;
 }
@@ -93,11 +121,15 @@ header {
     padding-bottom: 4px;
 }
 
+#actions {
+    text-align: center;
+}
+
 .login-content {
     position: absolute;
-    top: 0;
+    top: 6px;
     right: 0;
-    background-color: navy;
+    background-color: #f47e58;
     color:white;
 }
 .inactive {
@@ -107,10 +139,6 @@ header {
 }
 
 .introduction {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     padding: 20%;
     background-image: url('https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb');
     background-repeat: no-repeat;
