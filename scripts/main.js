@@ -1,4 +1,4 @@
-var $photoGallery = $('.photos');
+var $photoGallery = $('#photos');
 var imgGallery = [ 
     {
         link: "images/pg1.jpg"
