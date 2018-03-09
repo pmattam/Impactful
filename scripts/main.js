@@ -24,25 +24,7 @@ var imageDisplay = function(gallery) {
 imageDisplay(imgGallery);
 
 
-//Opens login menu from navigator bar
-document.addEventListener('click', function(e) {
-    var loginButton = document.querySelector('#login-trigger');
-    var loginMenu = document.querySelector('.login-content');
-    var loginForm = document.querySelector('.login-form');
-    if (e.target === loginButton) {
-        loginMenu.classList.remove('inactive');
-    } else if (e.target.parentElement === loginForm) {
-        loginMenu.classList.remove('inactive');
-    } else {
-        loginMenu.classList.add('inactive');
-    }
-});
 
-var dropdownContent = document.querySelector('.dropdown-content');
-var dropbtn = document.querySelector('.dropbtn');
-dropbtn.addEventListener('click', function(event) {
-    dropdownContent.classList.toggle('active');  
-    })
 
 
 //google maps API
@@ -88,8 +70,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     };
 
 //adding click listener to search button, will open new page
-var searchButton = document.querySelector('#simple-search > div > button')
-searchButton.addEventListener('click', function(e) {
+var searchForm = document.querySelector('#simple-search')
+searchForm.addEventListener('submit', function(e) {
+    var searchTerm = (searchForm.searchCharity.value);
     window.open('html/search.html', '_blank');
 })
-
