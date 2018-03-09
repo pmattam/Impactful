@@ -1,20 +1,58 @@
+// Populate Search Results
+var search = 'animals'  ///will be result from form data
+var URL = `https://api.data.charitynavigator.org/v2/Organizations?app_id=b57044da&app_key=f5ee4219833b3800a76f5ff48f56bcc1&pageSize=10&search=${search}s&city=Atlanta`;
+var charityRawData = [];
 
-//fetches information from Charity Navigator API
 
-fetch("https://api.data.charitynavigator.org/v2/Organizations?app_id=b57044da&app_key=f5ee4219833b3800a76f5ff48f56bcc1&pageSize=50&state=GA")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function(data) {
-        return (Object.values(data))
-    })
-    .then(function(data) {        
-        for (var i=1; i<data.length; i++) {
-            var text = data[i];
-            text = JSON.stringify(text);
-        var searchResults = document.querySelector('.searchResults');
-        var newDiv = document.createElement('div');
-        newDiv.textContent = text;
-        searchResults.appendChild(newDiv);
-        }
+
+
+var getCharityApiData = function() {
+    fetch(URL, {method: 'GET'})
+         .then(function(response) {
+            return response.json();
+        })
+        .then(processGetData)
+        .then(getCharityList)
+        .then(charityDisplay);
+};
+
+var processGetData = function(apiData) {
+    charityRawData = Object.values(apiData);
+    return charityRawData;
+};
+
+var getCharityList = function() {
+    var fullCharityList = [];
+    var charityList = charityRawData.map(function(obj) {
+        var charityInformation = {'Name': obj.charityName, 'Address': obj.mailingAddress, 'Rating': obj.currentRating};
+        var charityInformationString = makeItPretty(charityInformation);
+        fullCharityList.push(charityInformationString);
     });
+    console.log(fullCharityList)
+    return fullCharityList;
+};
+
+var makeItPretty = function(text) {
+    var textJSON = JSON.stringify(text)
+    textJSON = textJSON.replace(/"/g, '');
+    textJSON = textJSON.replace(/,/g, ',  ');
+    textJSON = textJSON.replace(/:/g, ':  ');
+    textJSON = textJSON.replace(/}/g, '');
+    textJSON = textJSON.replace(/{/g, '');
+    return textJSON;
+};
+
+var charityDisplay = function(fullcharityList) {
+    var searchResults = document.querySelector('.searchResults');
+    fullcharityList.forEach(function(item) {
+        var newDiv = document.createElement('div');
+        newDiv.textContent = item;
+        searchResults.appendChild(newDiv)
+    })
+
+};
+
+
+
+getCharityApiData();
+
