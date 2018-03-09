@@ -10,11 +10,11 @@
 </head>
 <body>
     <header>
-        <div class="logo"><img class="logo-img" src="../images/logo_white.png"></div>
+        <div class="logo"><a href="https://pmattam.github.io/Impactful/"><img class="logo-img" src="../images/logo_white.png"></a></div>
     </header>
-    <section>
-        <form>
-        <div class="donate-form">
+    <div class="form-section">
+        <form id="donate-form">
+        <div class="name-div">
             <span>Name</span>
             <div>
                 <div>
@@ -28,7 +28,9 @@
             </div>
             <div>
                 <span>Charity</span>
-                <input type="text" name="charityName" size="20" value="">
+                <select name="charityName" class="charity-name">
+
+                </select> 
             </div>
             <div>
                 <span>Amount you would like to donate</span>
@@ -50,11 +52,13 @@
                 <button>Submit</button>
             </div>
         </div>
-    </form>
-    </section>
+        </form>
+    </div>
     <footer class="footer">
+        <div class="logo"><a href="https://pmattam.github.io/Impactful/html/blog">Blog</a></div>
+        <div class="logo"><a href="https://pmattam.github.io/Impactful/html/about">About Us</a></div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    <script src="../scripts/main.js"></script>
+    <script src="../scripts/donate.js"></script>
 </body>
 </html>
