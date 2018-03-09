@@ -12,7 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 
 header {
@@ -23,7 +23,7 @@ header {
     display: flex;
     flex-wrap:nowrap;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
 }
 
 .logo {
@@ -37,12 +37,26 @@ header {
     width: 220px;
 }
 
-.donate-form {
+.form-section {
+    display: flex;
+    padding: 20%;
+    background-image: url('https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.name-div {
     text-align: center;
 }
 
 .footer {
     display: flex;
     background-color:  #2f3e66;
-    padding: 100px 100px 100px 100px;
+    height: 100px;
+    color: white;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
 }
