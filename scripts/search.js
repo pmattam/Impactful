@@ -1,5 +1,5 @@
 // Populate Search Results
-var search = 'animals'  ///will be result from form data
+var search = 'horses'  ///will be result from form data
 var URL = `https://api.data.charitynavigator.org/v2/Organizations?app_id=b57044da&app_key=f5ee4219833b3800a76f5ff48f56bcc1&pageSize=10&search=${search}s&city=Atlanta`;
 var charityRawData = [];
 

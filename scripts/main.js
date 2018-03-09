@@ -70,8 +70,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     };
 
 //adding click listener to search button, will open new page
-var searchButton = document.querySelector('#simple-search > div > button')
-searchButton.addEventListener('click', function(e) {
-    console.log(form);
+var searchForm = document.querySelector('#simple-search')
+searchForm.addEventListener('submit', function(e) {
+    var searchTerm = (searchForm.searchCharity.value);
     window.open('html/search.html', '_blank');
 })
