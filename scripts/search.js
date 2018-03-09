@@ -1,6 +1,12 @@
 // Populate Search Results
-var search = 'horses'  ///will be result from form data
-var URL = `https://api.data.charitynavigator.org/v2/Organizations?app_id=b57044da&app_key=f5ee4219833b3800a76f5ff48f56bcc1&pageSize=10&search=${search}s&city=Atlanta`;
+
+var url = window.location.href;
+var urlSplit = url.split('=')
+
+
+var search = urlSplit[1]  
+console.log(search)
+var URL = `https://api.data.charitynavigator.org/v2/Organizations?app_id=b57044da&app_key=f5ee4219833b3800a76f5ff48f56bcc1&pageSize=15&search=${search}&rated=true&state=GA&city=Atlanta&sort=RATING`;
 var charityRawData = [];
 
 

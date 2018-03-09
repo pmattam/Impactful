@@ -12,7 +12,7 @@
     <header>
 
         <div class="menu">
-            <div class="dropbtn"><img class="menu-icon" src="images/menu-white.png"></i></div>
+            <div class="dropbtn"><img class="menu-icon" src="images/menu-white.png"></div>
         </div>
         <div class="dropdown-content">
                 <a href="index.html">Home</a>
@@ -51,11 +51,10 @@
                 <p>It is our misson to connect amazing people with equally amazing charities.  Everyone wins!</p>
             </div>
             <div id="search">
-                <form id="simple-search" name="simple-search">
+                <form method="GET" action="html/search.html"  id="simple-search" name="simple-search">
                     <div class="search-div">
-                        <input type="text" id="location-text" name="location" placeholder="Enter City">
-                        <input type="text" id="search-text" name="searchCharity" placeholder="Search Charity Name">
-                        <button class="search-button">Search</button>
+                        <input type="search" id="search-text" name="searchCharity" placeholder="Keyword">
+                        <button type="submit" class="search-button">Search</button>
                     </div>
                 </form>
             </div>
@@ -75,7 +74,7 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="scripts/header.js"></script>
-    <script src="scripts/main.js"></script>`
+    <script src="scripts/main.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV-UicDTaSWk9NG6dx1bk6Ihg3T-3Ohow&callback=initMap"
     async defer></script>
 </body>

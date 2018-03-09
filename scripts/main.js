@@ -69,9 +69,9 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
     };
 
-//adding click listener to search button, will open new page
-var searchForm = document.querySelector('#simple-search')
-searchForm.addEventListener('submit', function(e) {
-    var searchTerm = (searchForm.searchCharity.value);
-    window.open('html/search.html', '_blank');
-})
+// //adding click listener to search button, will open new tab
+// var searchForm = document.querySelector('#simple-search')
+// searchForm.addEventListener('submit', function(e) {
+//     var searchTerm = (searchForm.searchCharity.value);
+//     window.open('html/search.html', '_blank');
+// })
