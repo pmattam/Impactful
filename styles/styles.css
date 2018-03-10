@@ -289,3 +289,31 @@ header {
     width: 100%;
 }
 
+/* Styling for the table for the search results */
+
+table {
+    font-family: Arial;
+    border: 0 solid rgba(5,5,5,0);
+    border-radius: 15px;
+    background-color: rgba(5,5,5,0);
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+
+th {
+    padding: 20px 20px;
+    font-size: 20px;
+    color: #f47e58;
+}
+
+td {
+    padding: 8px 8px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2f3e66;
+}
+
+tr {
+    background: whitesmoke;
+}

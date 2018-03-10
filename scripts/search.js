@@ -1,16 +1,9 @@
 // Populate Search Results
-
 var url = window.location.href;
 var urlSplit = url.split('=')
-
-
 var search = urlSplit[1]  
-console.log(search)
-var URL = `https://api.data.charitynavigator.org/v2/Organizations?app_id=b57044da&app_key=f5ee4219833b3800a76f5ff48f56bcc1&pageSize=15&search=${search}&rated=true&state=GA&city=Atlanta&sort=RATING`;
+var URL = `https://api.data.charitynavigator.org/v2/Organizations?app_id=b57044da&app_key=f5ee4219833b3800a76f5ff48f56bcc1&pageSize=15&search=${search}&rated=true&state=GA&city=Atlanta&minRating=2&sort=RATING:DESC`;
 var charityRawData = [];
-
-
-
 
 var getCharityApiData = function() {
     fetch(URL, {method: 'GET'})
@@ -28,37 +21,47 @@ var processGetData = function(apiData) {
 };
 
 var getCharityList = function() {
-    var fullCharityList = [];
     var charityList = charityRawData.map(function(obj) {
-        var charityInformation = {'Name': obj.charityName, 'Address': obj.mailingAddress, 'Rating': obj.currentRating};
-        var charityInformationString = makeItPretty(charityInformation);
-        fullCharityList.push(charityInformationString);
+        var charityInformation = {'Name': obj.charityName, 'Address': obj.mailingAddress, 'Rating': obj.currentRating, 'Website': obj.websiteURL};
+        return charityInformation;
     });
-    console.log(fullCharityList)
-    return fullCharityList;
+    return charityList;
 };
 
-var makeItPretty = function(text) {
-    var textJSON = JSON.stringify(text)
-    textJSON = textJSON.replace(/"/g, '');
-    textJSON = textJSON.replace(/,/g, ',  ');
-    textJSON = textJSON.replace(/:/g, ':  ');
-    textJSON = textJSON.replace(/}/g, '');
-    textJSON = textJSON.replace(/{/g, '');
-    return textJSON;
+var charityDisplay = function(charityList) {
+    addCharityListToTable(charityList);
 };
 
-var charityDisplay = function(fullcharityList) {
-    var searchResults = document.querySelector('.searchResults');
-    fullcharityList.forEach(function(item) {
-        var newDiv = document.createElement('div');
-        newDiv.textContent = item;
-        searchResults.appendChild(newDiv)
-    })
+var addCharityListToTable = function(charityList) {
+    var searchDiv = document.querySelector('.search-results');
+    var table = document.createElement('table');
+    var headerRow = table.insertRow(-1);
+    var headerNameCell = document.createElement('TH');
+    headerNameCell.textContent = 'ORGANIZATION NAME';
+    headerRow.appendChild(headerNameCell);
 
-};
+    var headerAddressCell = document.createElement('TH');
+    headerAddressCell.textContent = 'ADDRESS';
+    headerRow.appendChild(headerAddressCell);
 
-
+    var headerRatingCell = document.createElement('TH');
+    headerRatingCell.textContent = 'RATING';
+    headerRow.appendChild(headerRatingCell);
+    searchDiv.appendChild(table);
+    
+    charityList.forEach(function(charity) {
+        var img = document.createElement('img');
+        var row = table.insertRow();
+        var nameCell = row.insertCell(0);
+        nameCell.textContent = charity.Name;
+        var addressCell = row.insertCell(1);
+        addressCell.textContent = charity.Address.streetAddress1 + ", " + charity.Address.city + ", " + charity.Address.stateOrProvince + ", " + charity.Address.postalCode;
+        var ratingCell = row.insertCell(2);
+        img.setAttribute('src', charity.Rating.ratingImage.large);
+        ratingCell.appendChild(img);
+    });
+    searchDiv.appendChild(table);
+}
 
 getCharityApiData();
 
