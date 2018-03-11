@@ -1,0 +1,14 @@
+.blog-img {
+    width: 100%;
+    height: auto;
+}
+
+.blog-results {
+    display: inline-block;
+}
+
+.blog-results ul {
+    list-style: none;
+    text-align:center;
+    display:inline-block;
+}
