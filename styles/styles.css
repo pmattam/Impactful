@@ -273,6 +273,10 @@ td {
     color: #2f3e66;
 }
 
+.name-cell:hover {
+    text-decoration: underline;
+}
+
 tr {
     background: whitesmoke;
 }

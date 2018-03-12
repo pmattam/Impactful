@@ -53,15 +53,25 @@ var addCharityListToTable = function(charityList) {
         var img = document.createElement('img');
         var row = table.insertRow();
         var nameCell = row.insertCell(0);
+        nameCell.classList.add('name-cell');
         nameCell.textContent = charity.Name;
         var addressCell = row.insertCell(1);
         addressCell.textContent = charity.Address.streetAddress1 + ", " + charity.Address.city + ", " + charity.Address.stateOrProvince + ", " + charity.Address.postalCode;
         var ratingCell = row.insertCell(2);
         img.setAttribute('src', charity.Rating.ratingImage.large);
         ratingCell.appendChild(img);
+        nameCell.addEventListener('click', function() {
+            openInNewTab(charity.Website);
+        });
     });
     searchDiv.appendChild(table);
 };
+
+var openInNewTab = function (url) {
+    var win = window.open(url, '_blank');
+    console.log(url);
+    win.focus();
+}
 
 getCharityApiData();
 
