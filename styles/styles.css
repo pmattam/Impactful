@@ -181,61 +181,33 @@ header {
 #donate {
     display: flex;
     justify-content: center;
-    padding: 10px 10px 10px 10px;
+    padding: 0 0 80px;
 }
 
 .donate-button {
     display: flex;
-    /* appearance: none; */
-    /* background:#f72359; */
-    /* background: cadetblue; */
-    /* background-color: #f37021; */
-    /* border-color: #f37021; */
-    border: 3px solid #fffbdc;
+    border: 3px solid;
     background-color: #f47e58;
-    color: #24335a;
-    border-color: #f47e58;
-    /* box-shadow: inset 0 -3px 0 0 #e45d0c; */
-    padding: 1em 3em;
+    padding: 17px 60px;
     border: none;
-    /* color: white; */
-    font-size: 1.2em;
-    /* cursor: pointer; */
+    font-size: 15px;
+    cursor: pointer;
     outline: none;
     overflow: hidden;
     border-radius: 4px;
 }
 
+#donate a {
+    color: #1b233a;
+    font-weight: bold;
+}
+
 .donate-button:hover {
-    border: 3px solid #fffbdc;
-    background-color: #2f3e66;
-    color: #f47e58;
-    border-color: #f47e58;
+    background-color: #1b233a;
 }
 
-.donate-link {
-    text-decoration: none;
-    color: #24335a;
-}
-
-.donate-link:hover {
-    text-decoration: none;
-    color: #f47e58;
-}
-
-.footer {
-    display: flex;
-    /* border-top: darkgray; */
-    background-color:  #2f3e66;
-    /* border-color: darkgray; */
-    /* padding: 100px 100px 100px 100px; */
-    height: 100px;
-    color: white;
-}
-
-.footer a {
-    color: white;
-    text-decoration: none;
+#donate a:hover {
+    color:  #f47e58;
 }
 
 
@@ -287,6 +259,70 @@ td {
 tr {
     background: whitesmoke;
 }
+
+
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color:  #2f3e66;
+    color: white;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sns {
+    padding: 40px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+.sns p {
+    margin: 6px;
+}
+.social-icon img{
+    height: 35px;
+    padding: 20px;
+}
+
+.follow-icon {
+    display: flex;
+
+}
+
+.footer-aboutus{
+    display: flex;
+    align-items: center;
+}
+
+.footer-aboutus-container{
+    display: flex;
+    justify-content: center;
+    height: 95px;
+    width: 100vw;
+    background-color: #29365a;
+}
+
+.link {
+    list-style: none;
+    line-height: 2em;
+    display: inline;
+    padding: 30px;
+}
+
+.copyright {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-align: center;
+}
+
 
 .sidebar {
     display: none;
