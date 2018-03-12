@@ -169,8 +169,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 
-getCharityApiData();
-
 var getCharityNameByAddress = function(geoDataAddress) {
     //console.log("Actual geoData Address", geoDataAddress);
     var replacedGeoDataAddress = geoDataAddress.replace(" NW", "").replace(" NE", "").replace(", USA", "")
