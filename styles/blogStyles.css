@@ -17,6 +17,7 @@
     margin: 0;
     padding: 0;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .blog-results li {
@@ -34,8 +35,8 @@
     width: 30%;
 }
 
-a {
-    color: rgb(18, 18, 95);
+h3 {
+    color: rgb(40, 40, 124);
     font-size: 1.3em;
     font-weight: bold;
     padding: 0;

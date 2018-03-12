@@ -24,9 +24,8 @@ var addBlogListToPage = function(articleList) {
     
     articleList.forEach(function(article) {
         var ulElement = document.createElement('ul');
-        var title = document.createElement('a')
+        var title = document.createElement('h3')
         title.textContent = article.title;
-        title.setAttribute('href', article.url)
         var titleLi = createLiElement(title);
         ulElement.appendChild(titleLi);
         var pic = document.createElement('img');
@@ -45,6 +44,10 @@ var addBlogListToPage = function(articleList) {
         description.textContent = article.description;
         descriptionLi = createLiElement(description);
         ulElement.appendChild(descriptionLi);
+        ulElement.addEventListener('click', function(e) {
+            e.preventDefault();
+            openInNewTab(article.url);
+        })
         searchDiv.appendChild(ulElement);
     });
 
@@ -61,6 +64,21 @@ var createHrefElement = function(text) {
     hrefElement.setAttribute('href', text);
     return hrefElement;
 }
+
+var openInNewTab = function (url) {
+    var win = window.open(url, '_blank');
+    console.log(url);
+    win.focus();
+}
+
+var anchorTags = document.querySelector('a')
+anchorTags.addEventListener('click', function(event) {
+    event.preventDefault();
+    console.log(event)
+    // openInNewTab(event.target);
+})
+
+
 
 getBlogApiData();
 
