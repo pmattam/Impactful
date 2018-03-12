@@ -48,23 +48,6 @@ header {
     padding: 150px;
 }
 
-/* .name-div {
-    text-align: center;
-} */
-
-.footer {
-    display: flex;
-    background-color:  #2f3e66;
-    height: 100px;
-    color: white;
-}
-
-.footer a {
-    text-decoration: none;
-    color: white;
-}
-
-
 #donate-form input[type="text"] {
     padding: 0px;
     font-size: 19px;
@@ -91,4 +74,65 @@ header {
     justify-content: center;
     display:flex;
     padding-top: 15px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color:  #2f3e66;
+    color: white;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sns {
+    padding: 40px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+.sns p {
+    margin: 6px;
+}
+.social-icon img{
+    height: 35px;
+    padding: 20px;
+}
+
+.follow-icon {
+    display: flex;
+
+}
+
+.footer-aboutus{
+    display: flex;
+    align-items: center;
+}
+
+.footer-aboutus-container{
+    display: flex;
+    justify-content: center;
+    height: 95px;
+    width: 100vw;
+    background-color: #29365a;
+}
+
+.link {
+    list-style: none;
+    line-height: 2em;
+    display: inline;
+    padding: 24px;
+}
+
+.copyright {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-align: center;
 }
