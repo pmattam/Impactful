@@ -2,7 +2,7 @@
 var url = window.location.href;
 var urlSplit = url.split('=')
 var search = urlSplit[1]  
-var URL = `https://api.data.charitynavigator.org/v2/Organizations?app_id=b57044da&app_key=f5ee4219833b3800a76f5ff48f56bcc1&pageSize=15&search=${search}&rated=true&state=GA&city=Atlanta&minRating=2&sort=RATING:DESC`;
+var URL = `https://api.data.charitynavigator.org/v2/Organizations?app_id=b57044da&app_key=f5ee4219833b3800a76f5ff48f56bcc1&pageSize=200&search=${search}&rated=true&state=GA&city=Atlanta&minRating=2&sort=RATING:DESC`;
 var charityRawData = [];
 
 var getCharityApiData = function() {
@@ -61,7 +61,7 @@ var addCharityListToTable = function(charityList) {
         ratingCell.appendChild(img);
     });
     searchDiv.appendChild(table);
-}
+};
 
 getCharityApiData();
 
