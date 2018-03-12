@@ -77,11 +77,11 @@ async function asyncCall() {
     return geoData; // Returning here so it won't come empty
 }
 
-    // google maps API //
-    // Note: This example requires that you consent to location sharing when //
-    // prompted by your browser. If you see the error "The Geolocation service //
-    // failed.", it means you probably did not give permission for the browser to //
-    // locate you. //
+// google maps API //
+// Note: This example requires that you consent to location sharing when //
+// prompted by your browser. If you see the error "The Geolocation service //
+// failed.", it means you probably did not give permission for the browser to //
+// locate you. //
 var map, infoWindow;
 var  initMap = function(geoCodesData) {
     // console.log("Geocodes Data", geoCodesData);
@@ -148,16 +148,17 @@ getCharityApiData();
 var getCharityNameByAddress = function(geoDataAddress) {
     //console.log("Actual geoData Address", geoDataAddress);
     var replacedGeoDataAddress = geoDataAddress.replace(" NW", "").replace(" NE", "").replace(", USA", "")
-    .replace(" Avenue", " Ave").replace(" SE", "").replace(", SE", "").trim();
+    .replace(" Avenue", " Ave").replace(" SE", "").replace(", SE", "").replace(" Boulevard", " Blvd").trim();
 
     var foundMatchingCharityObj = charityDataList.find(function(obj) {
         // console.log("Street Addr", obj.Address.streetAddress1);
         // console.log("Postal Code", obj.Address.postalCode);
         var address = obj.Address.streetAddress1 + ", " + obj.Address.city + ", " + obj.Address.stateOrProvince + " " + obj.Address.postalCode;
         var replacedAddress = address.replace(" Road", " Rd").replace(" Street", " St").replace(", NW", "").replace(" NW", "").replace(", NE", "")
-        .replace(" NE", "").replace(" N.E.", "").replace(" Drive,", " Dr").replace(" Drive", " Dr").replace(" Avenue", " Ave").replace(", Ste ", " #").replace(" Circle", " Cir")
-        .replace(" Boulevard", " Blvd").replace(" Highway", " Hwy").replace(" Parkway", " Pkwy").replace(" Deklab", " Dekalb")
-        .replace(" SE", "").replace(", SE", "").trim();
+        .replace(" NE", "").replace(" N.E.", "").replace(" Drive,", " Dr").replace(" Drive", " Dr").replace(" Ave,", " Ave").replace(" Avenue", " Ave")
+        .replace(", Ste ", " #").replace(" Circle", " Cir")
+        .replace(" Boulevard", " Blvd").replace(" Highway", " Hwy").replace(" Parkway,", " Pkwy").replace(" Parkway", " Pkwy").replace(" Deklab", " Dekalb")
+        .replace(" SE", "").replace(", SE", "").replace(",,", ",").trim();
         return replacedAddress === replacedGeoDataAddress;
     });
     if(foundMatchingCharityObj !== undefined) {
