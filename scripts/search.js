@@ -16,7 +16,7 @@ var getCharityApiData = function() {
         .then(charityDisplay)
         .then(getGeocodes)
         .then(asyncCall)
-        .then(initMap);;
+        .then(initMap);
 };
 
 var processGetData = function(apiData) {
@@ -74,12 +74,12 @@ var addCharityListToTable = function(charityList) {
 
 var openInNewTab = function (url) {
     var win = window.open(url, '_blank');
-    console.log(url);
+    // console.log(url);
     win.focus();
-}
+};
 
 var getGeocodes = function(charityList) {
-    console.log("Charity List", charityDataList);
+    // console.log("Charity List", charityDataList);
     charityDataList.forEach(function(obj) {
         if(!(obj.Address.streetAddress1.startsWith("PO B")) && !(obj.Address.streetAddress1.startsWith("P.O. B"))) {
         var address = obj.Address.streetAddress1 + ", " + obj.Address.city + ", " + obj.Address.stateOrProvince + " " + obj.Address.postalCode;
@@ -108,10 +108,15 @@ async function asyncCall() {
     return geoData;
 }
 
+// google maps API //
+// Note: This example requires that you consent to location sharing when //
+// prompted by your browser. If you see the error "The Geolocation service //
+// failed.", it means you probably did not give permission for the browser to //
+// locate you. //
 var map, infoWindow;
 var  initMap = function(geoCodesData) {
     // console.log("Geocodes Data", geoCodesData);
-    map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('search-map'), {
         center: {lat: 33.753, lng: -84.386},
         zoom: 10
     });
@@ -136,13 +141,11 @@ var  initMap = function(geoCodesData) {
         // Browser doesn't support Geolocation //
         handleLocationError(false, infoWindow, map.getCenter());
     }
-
     // console.log("charity data list", charityDataList);
     // console.log("geoData", geoData);
-
     var marker, i;
     for (i = 0; i < geoData.length; i++) {
-        //console.log("location", geoData[i].geometry.location);
+        // console.log("location", geoData[i].geometry.location);
 		marker = new google.maps.Marker({
             // position: new google.maps.LatLng(locations[i][1], locations[i][2]),
             // position: new google.maps.LatLng(geoData[i].geometry.location.lat, geoData[i].geometry.location.lng),
@@ -170,18 +173,21 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 var getCharityNameByAddress = function(geoDataAddress) {
-    //console.log("Actual geoData Address", geoDataAddress);
+    // console.log("Actual geoData Address", geoDataAddress);
     var replacedGeoDataAddress = geoDataAddress.replace(" NW", "").replace(" NE", "").replace(", USA", "")
-    .replace(" Avenue", " Ave").replace(" SE", "").replace(", SE", "").trim();
+    .replace(" Avenue", " Ave").replace(" SE", "").replace(", SE", "").replace(" Boulevard", " Blvd").trim();
 
     var foundMatchingCharityObj = charityDataList.find(function(obj) {
         // console.log("Street Addr", obj.Address.streetAddress1);
         // console.log("Postal Code", obj.Address.postalCode);
         var address = obj.Address.streetAddress1 + ", " + obj.Address.city + ", " + obj.Address.stateOrProvince + " " + obj.Address.postalCode;
         var replacedAddress = address.replace(" Road", " Rd").replace(" Street", " St").replace(", NW", "").replace(" NW", "").replace(", NE", "")
-        .replace(" NE", "").replace(" N.E.", "").replace(" Drive,", " Dr").replace(" Drive", " Dr").replace(" Avenue", " Ave").replace(", Ste ", " #").replace(" Circle", " Cir")
-        .replace(" Boulevard", " Blvd").replace(" Highway", " Hwy").replace(" Parkway", " Pkwy").replace(" Deklab", " Dekalb")
-        .replace(" SE", "").replace(", SE", "").trim();
+        .replace(" NE", "").replace(" N.E.", "").replace(" Drive,", " Dr").replace(" Drive", " Dr").replace(" Ave,", " Ave").replace(" Avenue", " Ave")
+        .replace(", Ste ", " #").replace(" Circle", " Cir")
+        .replace(" Boulevard", " Blvd").replace(" Highway", " Hwy").replace(" Parkway,", " Pkwy").replace(" Parkway", " Pkwy").replace(" Deklab", " Dekalb")
+        .replace(" SE", "").replace(", SE", "").replace(",,", ",").trim();
+        // console.log("RA", replacedAddress);
+        // console.log("RGA", replacedGeoDataAddress);
         return replacedAddress === replacedGeoDataAddress;
     });
     if(foundMatchingCharityObj !== undefined) {
