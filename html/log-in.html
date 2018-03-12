@@ -7,11 +7,10 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../styles/log-in.css" />
+    <meta name="google-signin-client_id" content="466247276109-9rbo1n2sk2bdrafjvd7sbe80rrkt2uk1.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
-    <header>
-        
-    </header>
 
 <div class="loginBox">
         <img src="../images/profile.png" class="user">
@@ -23,11 +22,16 @@
             <input type="password" name="" placeholder="**********" required>
             <input type="submit" name=""  placeholder="Sign In">
             <div class=login-footer>
+            <div id="my-signin2"></div>
             <li><a href="#">Forget Password</a></li>
-            <li><a href="#">Sign In</a></li>
-            </div>           
+            <li><a href="#">Sign up</a></li>
+            
+            </div>  
+            <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script> 
+            <script src="../scripts/log-in.js"></script>       
         </form>
     </div>
+</script>
     
 </body>
 </html>
