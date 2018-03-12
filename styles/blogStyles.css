@@ -4,11 +4,51 @@
 }
 
 .blog-results {
-    display: inline-block;
+    display: block;
 }
 
 .blog-results ul {
+    width: 100%;
     list-style: none;
-    text-align:center;
-    display:inline-block;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.blog-results li {
+    width: 70%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-results img {
+    text-align: center;
+    width: 30%;
+}
+
+a {
+    color: rgb(18, 18, 95);
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 0;
+    margin: 5px;
+}
+
+h4 {
+    font-style: italic;
+    padding: 0;
+    margin: 2px;
+}
+
+h5 {
+    padding: 0;
+    margin: 2px;
 }

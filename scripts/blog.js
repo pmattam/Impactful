@@ -24,14 +24,27 @@ var addBlogListToPage = function(articleList) {
     
     articleList.forEach(function(article) {
         var ulElement = document.createElement('ul');
-        var title = createLiElement(article.title);
-        ulElement.appendChild(title);
-        var author = createLiElement(article.author);
-        ulElement.appendChild(author);
-        var website = createLiElement(article.url);
-        ulElement.appendChild(website)
-        var description = createLiElement(article.description);
-        ulElement.appendChild(description);
+        var title = document.createElement('a')
+        title.textContent = article.title;
+        title.setAttribute('href', article.url)
+        var titleLi = createLiElement(title);
+        ulElement.appendChild(titleLi);
+        var pic = document.createElement('img');
+        pic.setAttribute('src', article.urlToImage);
+        var picLi = createLiElement(pic);
+        ulElement.appendChild(picLi);
+        var author = document.createElement('h4')
+        author.textContent = article.author;
+        var authorLi =createLiElement(author);
+        ulElement.appendChild(authorLi);
+        var date = document.createElement('h5');
+        date.textContent = article.publishedAt;
+        dateLi = createLiElement(date)
+        ulElement.appendChild(dateLi);
+        var description = document.createElement('h5')
+        description.textContent = article.description;
+        descriptionLi = createLiElement(description);
+        ulElement.appendChild(descriptionLi);
         searchDiv.appendChild(ulElement);
     });
 
@@ -39,7 +52,7 @@ var addBlogListToPage = function(articleList) {
 
 var createLiElement = function(text) {
     var liElement = document.createElement('li');
-    liElement.textContent = text;
+    liElement.appendChild(text);
     return liElement;
 }
 
