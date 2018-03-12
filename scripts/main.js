@@ -1,4 +1,3 @@
-var $photoGallery = $('#photos');
 var imgGallery = [ 
     {
         link: "images/pg1.jpg"
@@ -15,6 +14,7 @@ var imgGallery = [
 ];
 
 var imageDisplay = function(gallery) {
+    var $photoGallery = $('#photos');
     gallery.forEach(function(image) {
         var $imageTag = $('<img>', {'src': image.link});
         $photoGallery.append($imageTag);
@@ -22,52 +22,6 @@ var imageDisplay = function(gallery) {
 };
 
 imageDisplay(imgGallery);
-
-
-
-
-
-//google maps API
-  // Note: This example requires that you consent to location sharing when
-      // prompted by your browser. If you see the error "The Geolocation service
-      // failed.", it means you probably did not give permission for the browser to
-      // locate you.
-var map, infoWindow;
-function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 33.753, lng: -84.386},
-        zoom: 10
-    });
-    infoWindow = new google.maps.InfoWindow;
-
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-        };
-
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('You are here.');
-        infoWindow.open(map);
-        map.setCenter(pos);
-        }, function() {
-        handleLocationError(true, infoWindow, map.getCenter());
-        });
-    } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
-    }
-    }
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-                            'Error: The Geolocation service failed.' :
-                            'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
-    };
 
 // //adding click listener to search button, will open new tab
 // var searchForm = document.querySelector('#simple-search')
