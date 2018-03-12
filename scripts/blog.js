@@ -24,14 +24,30 @@ var addBlogListToPage = function(articleList) {
     
     articleList.forEach(function(article) {
         var ulElement = document.createElement('ul');
-        var title = createLiElement(article.title);
-        ulElement.appendChild(title);
-        var author = createLiElement(article.author);
-        ulElement.appendChild(author);
-        var website = createLiElement(article.url);
-        ulElement.appendChild(website)
-        var description = createLiElement(article.description);
-        ulElement.appendChild(description);
+        var title = document.createElement('h3')
+        title.textContent = article.title;
+        var titleLi = createLiElement(title);
+        ulElement.appendChild(titleLi);
+        var pic = document.createElement('img');
+        pic.setAttribute('src', article.urlToImage);
+        var picLi = createLiElement(pic);
+        ulElement.appendChild(picLi);
+        var author = document.createElement('h4')
+        author.textContent = article.author;
+        var authorLi =createLiElement(author);
+        ulElement.appendChild(authorLi);
+        var date = document.createElement('h5');
+        date.textContent = article.publishedAt;
+        dateLi = createLiElement(date)
+        ulElement.appendChild(dateLi);
+        var description = document.createElement('h5')
+        description.textContent = article.description;
+        descriptionLi = createLiElement(description);
+        ulElement.appendChild(descriptionLi);
+        ulElement.addEventListener('click', function(e) {
+            e.preventDefault();
+            openInNewTab(article.url);
+        })
         searchDiv.appendChild(ulElement);
     });
 
@@ -39,7 +55,7 @@ var addBlogListToPage = function(articleList) {
 
 var createLiElement = function(text) {
     var liElement = document.createElement('li');
-    liElement.textContent = text;
+    liElement.appendChild(text);
     return liElement;
 }
 
@@ -48,6 +64,21 @@ var createHrefElement = function(text) {
     hrefElement.setAttribute('href', text);
     return hrefElement;
 }
+
+var openInNewTab = function (url) {
+    var win = window.open(url, '_blank');
+    console.log(url);
+    win.focus();
+}
+
+var anchorTags = document.querySelector('a')
+anchorTags.addEventListener('click', function(event) {
+    event.preventDefault();
+    console.log(event)
+    // openInNewTab(event.target);
+})
+
+
 
 getBlogApiData();
 
