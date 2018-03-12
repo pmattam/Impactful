@@ -1,30 +1,36 @@
 body {
-    background-image: url("../images/log-in-background.jpeg")
+    background-image: url("../images/log-in-background.jpeg");
+    display: flex;
+    flex-direction: column;
 }
 
+
 .loginBox {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 0px 40px;
     box-sizing: border-box;
     background: transparent;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+.logo {
+    padding: 40px;
+    text-align: center;
+}
+.logo img {
+    height: 33px;
+}
 .user {
     width: 100px;
-    height: 100px;
-    overflow: hidden;
-    position: absolute;
-    top: 20px;
-    left: calc(50% - 50px);
+    text-align: center;
+    align-items: center;
 }
 
 .loginBox h2{
     margin: 0;
-    padding: 155px 0 20px;
+    padding: 35px 0 20px;
     color: #f47e58;
     text-align: center;
 }
