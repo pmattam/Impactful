@@ -27,6 +27,11 @@ header {
     align-items: center;
 }
 
+main {
+    display: block;
+    flex-grow: 1;   
+}
+
 .menu {
     width: 20%;
     display: flex;
@@ -240,6 +245,7 @@ header {
     display:flex;
     height: 100%;
     width: 100%;
+    margin-top: 20px;
 }
 
 /* Styling for the table for the search results page */
