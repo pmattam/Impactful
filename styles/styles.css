@@ -199,8 +199,9 @@ main {
 .rightarrow img {
     width: 15px;
 }
-
-#location-text, #search-text{
+  
+/* #location-text, #search-text{ */
+#location-text {
     height: 40px;
     width: 300px;
 }
@@ -212,16 +213,12 @@ main {
     align-items: center;
 }
 
-.search {
+#search {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-}
-
-#search {
-    margin-top: 30px;
+    margin: 30px 10px 10px 10px;
 }
 
 .search-button {
@@ -238,6 +235,13 @@ main {
     background-color: #24335a;
     color:  #f47e58;
     border-color: #f47e58;
+    border-radius: 4px;
+}
+
+input[type="search"]#search-text {
+    -webkit-appearance: none;
+    height: 35px;
+    width: 300px;
     border-radius: 4px;
 }
 
