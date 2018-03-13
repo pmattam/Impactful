@@ -5,29 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="../styles/donateStyles.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../styles/styles.css"> -->
     <title>How to Donate</title>
     <link rel="icon" type="image/png" href="../images/icon_blue.png"/>
 </head>
 <body>
 <div class="container">
-    <div class="logo"><a href="../index.html"><img class="logo-img" src="../images/whitelogo.png"></a></div>
+    <!-- <div class="logo"><a href="../index.html"><img class="logo-img" src="../images/whitelogo.png"></a></div> -->
+    <div class="logo"><a href="https://pmattam.github.io/Impactful/"><img class="logo-img" src="../images/whitelogo.png"></a></div>
     <div class="form-section">
-        <form id="donate-form">
+        <form id="donate-form" data-donate-form='form'>
         <div class="name-div">
             <div class="full-name">
                 <div>
                     <label for="firstName">First Name</label>
                     <input type="text" name="firstName" size="20" value="">
-                    
                 </div>
                 <div>
                     <label for="lastName">Last Name</label>
-                    <input type="text" name="lastName" size="20" value="">
-                    
+                    <input type="text" name="lastName" size="20" value="">  
                 </div>
             </div>
-
             <div class="charity"> 
                 <span>Charity</span>
                 <select name="charityName" class="charity-name">
@@ -37,30 +34,40 @@
                 <label for="amount">amount</label>
                 <input type="text" name="amount" size="20" value="">
             </div>
-
             <div>
                 <label for="credit-card">card number</label>
-                <input type="text" name="credit-card" size="20" value="">
-                
+                <input type="text" name="creditCard" size="20" value="">
             </div>
             <div class="full-name">
                 <div>
                     <label for="expiration-date">expiration date</label>
-                    <input type="text" name="expiration-date" size="20" value="">
+                    <input type="text" name="expirationDate" size="20" value="">
                 </div>
                 <div>
-                <label for="cvv">cvv</label>
-                <input type="text" name="cvv" size="20" value="">
+                    <label for="cvv">cvv</label>
+                    <input type="text" name="cvv" size="20" value="">
                 </div>
             </div>
             <div class="submit">
                 <button>Submit</button>
             </div>
-            </div>
+        </div>
         </form>
     </div>
 </div>
-
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyATyx4YteuYgVFHaZODrDZdwEo3u80fGAA",
+    authDomain: "impactful-c2bd4.firebaseapp.com",
+    databaseURL: "https://impactful-c2bd4.firebaseio.com",
+    projectId: "impactful-c2bd4",
+    storageBucket: "impactful-c2bd4.appspot.com",
+    messagingSenderId: "335211829350"
+  };
+  firebase.initializeApp(config);
+</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="../scripts/donate.js"></script>
 </body>
