@@ -1,5 +1,8 @@
 var imgGallery = [ 
     {
+        link: "images/pg0.jpg",
+    },
+    {
         link: "images/pg1.jpg"
     },
     {
@@ -20,9 +23,7 @@ var imgGallery = [
     {
         link: "images/pg7.jpg",
     },
-    {
-        link: "images/pg8.jpg",
-    }
+
 ];
 
 // var imageDisplay = function(gallery) {
@@ -59,11 +60,13 @@ var rightArrowScrollThroughPictures = function() {
     var thirdPicture = document.querySelector('#photos > img:nth-child(3)')
     var lastPicture = document.querySelector('#photos > img:nth-child(4)')
     var source = findImageSource(lastPicture);
-    if (source<8) {
-        firstPicture.setAttribute('src', imgGallery[source-2].link)
-        secondPicture.setAttribute('src', imgGallery[source-1].link)
-        thirdPicture.setAttribute('src', imgGallery[source].link)
-        lastPicture.setAttribute('src', imgGallery[source+1].link)
+    firstPicture.setAttribute('src', secondPicture.src) 
+    secondPicture.setAttribute('src', thirdPicture.src)
+    thirdPicture.setAttribute('src', lastPicture.src)
+    if (source===(imgGallery.length-1)) {
+        lastPicture.setAttribute('src', imgGallery[0].link)
+    }   else {
+        lastPicture.setAttribute('src', imgGallery[source+1].link) 
     }
 }
 
@@ -73,16 +76,13 @@ var leftArrowScrollThroughPictures = function() {
     var thirdPicture = document.querySelector('#photos > img:nth-child(3)')
     var lastPicture = document.querySelector('#photos > img:nth-child(4)')
     var source = findImageSource(firstPicture);
-    if (source <5) {
-        firstPicture.setAttribute('src', imgGallery[source].link)
-        secondPicture.setAttribute('src', imgGallery[source+1].link)
-        thirdPicture.setAttribute('src', imgGallery[source+2].link)
-        lastPicture.setAttribute('src', imgGallery[source+3].link)
-    } else if (source===5) {
-        firstPicture.setAttribute('src', imgGallery[source-1].link)
-        secondPicture.setAttribute('src', imgGallery[source].link)
-        thirdPicture.setAttribute('src', imgGallery[source+1].link)
-        lastPicture.setAttribute('src', imgGallery[7].link)
+    lastPicture.setAttribute('src', thirdPicture.src) 
+    thirdPicture.setAttribute('src', secondPicture.src)
+    secondPicture.setAttribute('src', firstPicture.src)
+    if (source=== 0) {
+        firstPicture.setAttribute('src', imgGallery[imgGallery.length-1].link)
+    }   else {
+        firstPicture.setAttribute('src', imgGallery[source-1].link) 
     }
 }
 
