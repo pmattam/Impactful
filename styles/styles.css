@@ -40,31 +40,41 @@ main {
 }
 
 .dropdown-content {
-    display: none;
-    background-color: whitesmoke;
-    text-align: center;
-    min-width: 133px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    height: 100%;
+    width: 0;
+    position: fixed;
     z-index: 1;
-    padding: 25px 0 25px 0;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd
+    left: 0;
+    top: 0;
+    background-color: rgb(194, 185, 185);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
 }
 
 .dropdown-content.active {
+    width:100%;
+}
+.dropdown-content a {
+    padding: 20px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
     display: block;
-    position: relative;
-    left: -67px;
-    top: 155px;
+    text-align: center;
+    transition: 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.close-button {
+    height: 30px;
+    position: absolute;
+    top: 18px;
+    right: 25px;
+}
+
+.sidenav a:hover {
+    color:grey;
 }
 
 .menu-icon {
@@ -114,7 +124,8 @@ main {
     padding: 20%;
     background-image: url('https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-position: center;
+    background-size: cover;
     
 }
 
@@ -345,7 +356,9 @@ tr {
 
 .sidebar {
     display: none;
-    width: 8%;
+    width: 30%;
+    z-index: 0;
+    position: absolute;
     background-color: rgb(233, 223, 223);
     flex-direction: column;
     justify-content: flex-start;
@@ -442,6 +455,9 @@ tr {
   }
 
   @media (min-width: 1200px) {
+    .dropdown-content {
+        display: none;
+    }
     .sidebar{
         display: flex;
     }

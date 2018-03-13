@@ -23,9 +23,11 @@ var imageDisplay = function(gallery) {
 
 imageDisplay(imgGallery);
 
+
 // //adding click listener to search button, will open new tab
 // var searchForm = document.querySelector('#simple-search')
 // searchForm.addEventListener('submit', function(e) {
 //     var searchTerm = (searchForm.searchCharity.value);
 //     window.open('html/search.html', '_blank');
 // })
+
