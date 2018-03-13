@@ -1,6 +1,5 @@
 html {
-    height: 100%;
-    width: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
 }
@@ -8,33 +7,25 @@ html {
 body {
     margin: 0;
     padding: 0;
-    min-height:100vh;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-between; 
+    background-image: url('../images/donation-background.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
-header {
-    background-color: #2f3e66;
-    color: white;
-    height: 90px;
-    width: 100%;
-    display: flex;
-    flex-wrap:nowrap;
-    flex-direction: row;
-    justify-content: center;
-}
 
 .logo {
-    width: 60%;
+    padding: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .logo-img {
-    width: 220px;
+    width: 295px;
 }
 
 .form-section {
@@ -42,97 +33,80 @@ header {
     align-items: center;
     justify-content: center;
     align-content: center;
-    background-image: url('https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    padding: 150px;
 }
 
-#donate-form input[type="text"] {
-    padding: 0px;
-    font-size: 19px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 14px;
-    color: #595d64;
-    border: 1px solid #cfd4d8;
-    display: block;
+input  {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid white;
+    margin: 3px 0;
+    outline: 0;
+    background-color: transparent;
+    font-size: 18px;
+}
+
+input, textarea{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.15em;
+}
+
+label, span{
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 0.15em;
+  }
+
+
+.full-name {
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+    }
+
+.full-name > * {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
 }
 
 .name-div {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    font-size: 20px;
+    line-height: 3em;
+    padding-bottom: 50px;
+}
+.charity {
+    display: flex;
+    font-family: arial;
     font-size: 13px;
+    padding: 30px 0 10px 0px;
     line-height: 2em;
 }
 
+.charity select {
+    background: rgb(243, 236, 236);
+    width: 398px;
+}
+
+
 .submit button {
-    padding: 7px;
+    padding: 15px 25px;
+    font-size: 14px;
+    font-family: arial;
+    color: grey;
+    background-color:rgb(243, 236, 236);
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
 }
 
 .submit {
     justify-content: center;
     display:flex;
-    padding-top: 15px;
-}
-
-.footer {
-    display: flex;
-    flex-direction: column;
-    background-color:  #2f3e66;
-    color: white;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer a {
-    color: white;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.sns {
-    padding: 40px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-}
-
-.sns p {
-    margin: 6px;
-}
-.social-icon img{
-    height: 35px;
-    padding: 20px;
-}
-
-.follow-icon {
-    display: flex;
-
-}
-
-.footer-aboutus{
-    display: flex;
-    align-items: center;
-}
-
-.footer-aboutus-container{
-    display: flex;
-    justify-content: center;
-    height: 95px;
-    width: 100vw;
-    background-color: #29365a;
-}
-
-.link {
-    list-style: none;
-    line-height: 2em;
-    display: inline;
-    padding: 24px;
-}
-
-.copyright {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    text-align: center;
+    padding-top: 80px;
 }
