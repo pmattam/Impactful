@@ -152,7 +152,8 @@ main {
     padding: 10px 10px 10px 10px; 
 }
 
-#location-text, #search-text{
+/* #location-text, #search-text{ */
+#location-text {
     height: 40px;
     width: 300px;
 }
@@ -164,13 +165,14 @@ main {
     align-items: center;
 }
 
-.search {
+#search {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     margin: 10px;
 }
+
 .search-button {
     padding: 1em 3em;
     border:2px solid #fffbdc;
@@ -185,6 +187,13 @@ main {
     background-color: #24335a;
     color:  #f47e58;
     border-color: #f47e58;
+    border-radius: 4px;
+}
+
+input[type="search"]#search-text {
+    -webkit-appearance: none;
+    height: 35px;
+    width: 300px;
     border-radius: 4px;
 }
 
