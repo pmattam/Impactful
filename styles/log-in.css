@@ -2,6 +2,8 @@ body {
     background-image: url("../images/log-in-background.jpeg");
     display: flex;
     flex-direction: column;
+    background-position: -11% 13%;
+    background-size: cover;
 }
 
 
@@ -16,7 +18,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 .logo {
-    padding: 40px;
+    padding: 40px 0 10px;
     text-align: center;
 }
 .logo img {
