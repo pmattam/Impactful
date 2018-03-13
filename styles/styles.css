@@ -434,6 +434,7 @@ tr {
 .person-img {
     width: 50%;
     height: 50%;
+    border-radius: 25%;
 }
 
 .person p {
