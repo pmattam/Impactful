@@ -163,6 +163,18 @@ main {
     color: white;
 }
 
+.search-div {
+    margin: 10px;
+}
+
+.photoGallery {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: nowrap;
+}
+
 #photos {
     display: flex;
     flex-direction: row;
@@ -178,6 +190,14 @@ main {
     width: 300px;
     height: 300px;
     padding: 10px 10px 10px 10px; 
+}
+
+.leftarrow img {
+    width: 15px;
+}
+
+.rightarrow img {
+    width: 15px;
 }
 
 #location-text, #search-text{
@@ -199,6 +219,11 @@ main {
     align-items: center;
     margin: 10px;
 }
+
+#search {
+    margin-top: 30px;
+}
+
 .search-button {
     padding: 1em 3em;
     border:2px solid #fffbdc;
