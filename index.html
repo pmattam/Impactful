@@ -13,6 +13,7 @@
         <div class="menu">
             <div class="dropbtn"><img class="menu-icon" src="images/menu-white.png"></div>
         </div>
+
         <div id="dropdown" class="dropdown-content">
                 <img class="close-button" src="images/close-button.png">
                 <a href="index.html">Home</a>
@@ -23,7 +24,6 @@
                 <a href="html/donate.html">Donate</a>
                 <a href="html/about.html">About us</a>
         </div>
-
         <div class="logo"><a href="https://pmattam.github.io/Impactful/"><img class="logo-img" src="images/whitelogo.png"></a></div>
         <div class="middle"></div>
         <div class="login">
@@ -33,18 +33,20 @@
                 </li>                    
             </ul>
         </div>
-    </header>
 
-    <div id="container">
-            <div class="sidebar"> 
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#search">Search</a></li>
-                        <li><a href="https://pmattam.github.io/Impactful/html/blog">Blog</a></li>
-                        <li><a href="index.html#photos">Photo</a></li>
-                        <li><a href="html/donate.html">Donate</a></li>
-                    </ul> 
-            </div>
+        <div class="sidebar">
+            <ul>
+                <li><a href="https://pmattam.github.io/Impactful/html/blog">Blog</a></li>
+                <li><a href="index.html#search">Search</a></li>
+                <li><a href="index.html#map">Connect</a></li>
+                <li><a href="index.html#photos">Photos</a></li>
+                <li><a href="html/donate.html">Donate</a></li>
+                <li><a href="html/about.html">About us</a></li>
+                <li><a id="login-trigger" href="html/log-in.html">Log in</a></li>
+            </ul>
+        </div>
+
+    </header>
             <div class="content">
             <div class="introduction">
                 <h2>Our mission is to connect amazing people with equally amazing organizations.</h2>
@@ -62,7 +64,11 @@
             <div class="location">
                 <div id="map"></div>
             </div>
-            <div id="photos"></div>
+            <div class="photoGallery">
+                <div class="leftarrow"><img src=images/leftarrow.png></div>
+                <div id="photos"></div>
+                <div class="rightarrow"><img src="images/rightarrow.png"></div>
+            </div>
     </div>
     </div>
     <footer class="footer">
