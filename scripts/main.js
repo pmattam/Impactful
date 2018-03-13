@@ -26,14 +26,6 @@ var imgGallery = [
 
 ];
 
-// var imageDisplay = function(gallery) {
-//     var $photoGallery = $('#photos');
-//     gallery.forEach(function(image) {
-//         var $imageTag = $('<img>', {'src': image.link});
-//         $photoGallery.append($imageTag);
-//     });
-// };
-
 var imageDisplay = function(gallery) {
     var photoGallery = document.querySelector('#photos');
     for (var i=0; i<gallery.length; i++) {
