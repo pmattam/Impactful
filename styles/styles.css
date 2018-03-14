@@ -155,20 +155,39 @@ main {
 }
 
 .introduction {
-    padding: 20%;
-    /* background-image: url('https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
-    
+    padding: 10%;    
 }
 
-.introduction h2, h4 {
+.introduction h2 {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: white;
+    font-size: 26px;
+    padding: 30px;
 }
 
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: black;
+}
+
+.map-title h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 28px;
+    color: black;
+    margin-bottom: -16px;
+    padding-left: 20px
+}
+
+.map-section {
+    padding: 50px 0 50px 0;
+}
+
+.gap {
+    padding: 10px
+}
 .search-div {
     margin: 10px;
 }
@@ -187,14 +206,15 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     box-sizing: border-box;
+    padding: 50px 0 50px 0;
 }
 
 #photos img {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 300px;
-    height: 300px;
+    width: 275px;
+    height: 275px;
     padding: 10px 10px 10px 10px; 
 }
 
@@ -219,12 +239,16 @@ main {
     align-items: center;
 }
 
+.search-section {
+    padding: 45px;
+}
+
 #search {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 30px 10px 10px 10px;
+    margin: 0px 10px 10px 10px;
 }
 
 .search-button {
@@ -317,7 +341,6 @@ input[type="search"]#search-text {
     display:flex;
     height: 100%;
     width: 100%;
-    margin-top: 20px;
 }
 
 /* Styling for the table for the search results page */
@@ -470,6 +493,11 @@ tr {
     .desktop-menu {
         display: none;
     }
+
+    .login-trigger {
+        display: none;
+    }
+
 }
 
 @media all and (max-width: 1199px) and (min-width: 768px) {
@@ -479,6 +507,10 @@ tr {
 .desktop-menu {
     display: none;
 }
+.login-trigger {
+    display: none;
+}
+
 }
 
 @media (min-width: 1200px) {
