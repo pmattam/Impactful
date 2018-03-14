@@ -416,6 +416,11 @@ tr {
     text-align: center;
 }
 
+.meet {
+    width: 100%;
+    text-align: center;
+}
+
 .about-us {
     display: flex;
     flex-direction: row;
@@ -424,6 +429,7 @@ tr {
     justify-content: center;
     align-items: center;
     margin: 10px;
+    flex-wrap: nowrap;
 }
 
 .person {
@@ -437,14 +443,20 @@ tr {
     align-items: center;
 }
 
+.person h3 {
+    font-size: 1.5em;
+}
+
 .person-img {
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    height: 60%;
     border-radius: 25%;
 }
 
 .person p {
     width: 80%;
+    color: black;
+    font-size: 1.5em;
 }
 
 .social-links {
@@ -460,6 +472,19 @@ tr {
     margin: 10px;
 }
 
+.about-us-background {
+    background: 
+    linear-gradient(
+      rgba(156, 156, 156, 0.514), 
+      rgba(156, 156, 156, 0.514)),
+      url('../images/background3.jpeg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+
+}
 
 
 

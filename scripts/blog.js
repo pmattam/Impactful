@@ -1,6 +1,6 @@
 // Populate Search Results
 
-var newsURL = 'https://newsapi.org/v2/everything?q=charity&sortBy=popularity&apiKey=dd2c986c594a428db26a72b36cb0b8d0';
+var newsURL = 'https://newsapi.org/v2/everything?q=charity&sortBy=popularity&pageSize=10&apiKey=dd2c986c594a428db26a72b36cb0b8d0';
 var blogRawData = [];
 
 var getBlogApiData = function() {

@@ -1,10 +1,24 @@
-.blog-img {
-    width: 100%;
-    height: auto;
+.blog-background {
+    background: 
+    linear-gradient(
+      rgba(196, 196, 196, 0.25), 
+      rgba(196, 196, 196, 0.25)   ),
+    url('../images/background2.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow:none;
 }
+
+.blog-img {
+    width: auto;    
+    height: 200px;
+}
+
 
 .blog-results {
     display: block;
+
 }
 
 .blog-results ul {
