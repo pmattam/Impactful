@@ -23,6 +23,15 @@ var imgGallery = [
     {
         link: "images/pg7.jpg",
     },
+    {
+        link: "images/pg8.jpg",
+    },
+    {
+        link: "images/pg9.jpg",
+    },
+    {
+        link: "images/pg10.jpg",
+    },
 
 ];
 
